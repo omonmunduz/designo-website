@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { CSSTransition } from "react-transition-group";
 import styled from "styled-components";
-import closeIcon from '../../images/shared/mobile/icon-close.svg';
+import closeIcon from "../../images/shared/mobile/icon-close.svg";
 
 const Drawer = styled.aside`
   position: fixed;
@@ -15,10 +15,10 @@ const Drawer = styled.aside`
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 `;
 const Close = styled.img`
-    position: absolute;
-    right: 15px;
-    top: 25px;
-    cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  cursor: pointer;
 `;
 
 const NavDrawer = (props) => {
@@ -31,8 +31,8 @@ const NavDrawer = (props) => {
       unmountOnExit
     >
       <Drawer>
-          <Close src={closeIcon} alt="close icon" onClick={props.closeBtn}/>
-          {props.children}
+        <Close src={closeIcon} alt="close icon" onClick={props.closeBtn} />
+        {props.children}
       </Drawer>
     </CSSTransition>
   );

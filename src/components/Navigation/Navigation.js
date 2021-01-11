@@ -5,6 +5,7 @@ import NavDrawer from "./NavDrawer";
 import Backdrop from "./Backdrop";
 import hamburger from "../../images/shared/mobile/icon-hamburger.svg";
 import closeIcon from "../../images/shared/mobile/icon-close.svg";
+import MobileNavOptions from "./MobileNavOptions";
 
 const Nav = styled.nav`
   display: none;
@@ -16,17 +17,15 @@ const Nav = styled.nav`
     align-items: center;
   }
 `;
-
 const GoTo = styled.h4`
   color: #1d1c1e;
   &:hover {
     color: #e7816b;
   }
-  @media(max-width: 550px) {
-      margin: 10px;
+  @media (max-width: 550px) {
+    margin: 10px;
   }
 `;
-
 const MobileNav = styled.nav`
   display: flex;
   width: 100%;
@@ -37,18 +36,14 @@ const MobileNav = styled.nav`
     display: none;
   }
 `;
-const MobileNavOptions = styled.ul`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-`;
 const Icon = styled.img`
   position: relative;
   cursor: pointer;
   z-index: 30;
 `;
+
+/* ---------------- Component Logic ------------------*/
+
 const Navigation = () => {
   const [open, setOpen] = useState(false);
 
@@ -58,7 +53,6 @@ const Navigation = () => {
   const closeDrawer = () => {
     setOpen(false);
   };
-
 
   return (
     <header>
@@ -79,16 +73,11 @@ const Navigation = () => {
       <MobileNav>
         <h3>Designo</h3>
         {open && <Backdrop onClick={closeDrawer} />}
-        <NavDrawer show={open} closeBtn = {closeDrawer}>
-            <MobileNavOptions>
-                <Link to ="/"><GoTo>Home</GoTo></Link>
-                <Link to="/about"><GoTo>About</GoTo></Link>
-                <Link to="/locations"><GoTo>Locations</GoTo></Link>
-                <Link to="/contact"><GoTo>Contact</GoTo></Link>
-            </MobileNavOptions>
+        <NavDrawer show={open} closeBtn={closeDrawer}>
+          <MobileNavOptions />
         </NavDrawer>
         <Icon
-          src={open ? closeIcon : hamburger }
+          src={open ? closeIcon : hamburger}
           alt="hamburger icon"
           onClick={openDrawer}
         />
