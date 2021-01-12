@@ -26,7 +26,7 @@ const GetInTouchBtn = styled.button`
   border-radius: 5px;
   font-size: 1rem;
   &:hover {
-    background-color: #FFAD9B;
+    background-color: #ffad9b;
   }
 `;
 const Heading = styled.h4`
